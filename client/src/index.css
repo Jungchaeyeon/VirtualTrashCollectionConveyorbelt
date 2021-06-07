@@ -19,13 +19,13 @@ body {
   background-color: #fff;
 }
 
-.app {
+/* .app {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 input.error {
   border-color: red;
@@ -37,3 +37,4 @@ input.error {
   height: 5px;
   margin-top: -12px;
 }
+

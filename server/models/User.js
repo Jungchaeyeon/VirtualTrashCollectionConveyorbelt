@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 const moment = require("moment");
+const { SECRET_KEY } = require("../config/config");
 
 const userSchema = mongoose.Schema({
     name: {
@@ -44,7 +45,7 @@ userSchema.pre('save', function( next ) {
         bcrypt.genSalt(saltRounds, function(err, salt){
             if(err) return next(err);
     
-            bcrypt.hash(user.password, salt, function(err, hash){
+            bcrypt.hash(user.password, salt, function(err, hash){ // hash
                 if(err) return next(err);
                 user.password = hash 
                 next()
@@ -66,7 +67,7 @@ userSchema.methods.generateToken = function(cb) {
     var user = this;
     console.log('user',user)
     console.log('userSchema', userSchema)
-    var token =  jwt.sign(user._id.toHexString(),'secret')
+    var token =  jwt.sign(user._id.toHexString(), SECRET_KEY)
     var oneHour = moment().add(1, 'hour').valueOf();
 
     user.tokenExp = oneHour;
@@ -80,7 +81,7 @@ userSchema.methods.generateToken = function(cb) {
 userSchema.statics.findByToken = function (token, cb) {
     var user = this;
 
-    jwt.verify(token,'secret',function(err, decode){
+    jwt.verify(token, SECRET_KEY,function(err, decode){
         user.findOne({"_id":decode, "token":token}, function(err, user){
             if(err) return cb(err);
             cb(null, user);

@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Menu } from 'antd';
 import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
@@ -20,23 +19,19 @@ function RightMenu(props) {
   };
 
   if (user.userData && !user.userData.isAuth) {
-    return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="mail">
-          <a href="/login">Signin</a>
-        </Menu.Item>
-        <Menu.Item key="app">
+    return ( //로그인 하지 않은 사람들은 이곳이 렌더링
+        <li>
+          <a href="/login">Signin</a>      
           <a href="/register">Signup</a>
-        </Menu.Item>
-      </Menu>
+        </li>
+     
     )
   } else {
-    return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="logout">
+    return ( //로그인 한 사람들은 이곳이 렌더링
+        <li>
+          <a href="/video/upload">Video</a>
           <a onClick={logoutHandler}>Logout</a>
-        </Menu.Item>
-      </Menu>
+          </li>
     )
   }
 }

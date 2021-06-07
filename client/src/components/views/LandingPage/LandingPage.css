@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&display=swap');
+
+
+.container{
+ 
+  box-sizing: border-box;
+  font-family: 'Barlow+Semi+Condensed', sans-serif;  
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  /* background-color: #405069; */
+}
+.container .card{
+  position: relative;
+  width: 320px;
+  height: 420px;
+  margin: 15px;
+  overflow: hidden;
+}
+.container .card span{
+  position: absolute;
+  display: block;
+  width: 0px;
+  height: 0px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  opacity: 0.9;
+  background: #657fa8;
+  z-index: 1;
+  transition: width 0.5s, height 0.5s
+}
+.container .card:hover span{
+  width: 1000px;
+  height: 1100px;
+}
+.container .card .imgBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;;
+}
+.container .card .imgBox img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card .content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:1;
+}
+.container .card .content div{
+  padding: 40px;
+  color: #fff;
+  visibility:hidden;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.2s;
+}
+.container .card .content div h2{
+  color: #fff;
+}
+.container .card:hover .content div{
+  visibility: visible;
+  transform: translateY(0px);
+  opacity: 1;
+}

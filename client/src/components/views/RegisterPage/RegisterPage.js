@@ -48,21 +48,46 @@ function RegisterPage(props) {
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()
-          .required('Name is required'),
+          .required('이름을 입력해주세요.'),
         lastName: Yup.string()
-          .required('Last Name is required'),
+          .required('성을 입력해주세요.'),
         email: Yup.string()
-          .email('Email is invalid')
-          .required('Email is required'),
+          .email('이메일이 유효하지 않습니다.')
+          .required('이메일을 입력해주세요.'),
         password: Yup.string()
-          .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'),
+          .min(8, '패스워드는 8글자 이상이여야 합니다.')
+          .max(20, '패스워드는 20글자 이내여야 합니다.')         
+          .required('패스워드를 입력해주세요'),
         confirmPassword: Yup.string()
-          .oneOf([Yup.ref('password'), null], 'Passwords must match')
-          .required('Confirm Password is required')
+          .oneOf([Yup.ref('password'), null], '비밀번호가 일치하지 않습니다.')
+          .required('패스워드를 다시한번 입력해주세요.')
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
+
+          var num = values.password.search(/[0-9]/g);
+          var eng = values.password.search(/[a-z]/ig);
+          var spe = values.password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+          var sqlArray = new Array(
+              //sql 예약어
+              "OR", "SELECT", "INSERT" , "DELETE", "UPDATE", "CREATE", "DROP", "AND", "FROM", "UNION",
+              "FETCH", "DECLARE", "TRUNCATE" ,"JOIN"
+          );
+  
+         
+          if(num < 0 || eng < 0 || spe < 0 ){
+              return alert('"영문,숫자, 특수문자를 혼합하여 입력해주세요.')
+          }
+          var regex;
+          for(var i =0; i< sqlArray.length; i++){
+              regex = new RegExp(sqlArray[i], "gi");
+  
+              if(regex.test(values.password)){
+                   alert("\""+ sqlArray[i] + "\과 같은 특정문자는 사용할 수 없습니다.") 
+                   return false;
+              }
+            
+          } 
 
           let dataToSubmit = {
             email: values.email,
@@ -71,6 +96,7 @@ function RegisterPage(props) {
             lastname: values.lastname,
             image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
           };
+
 
           dispatch(registerUser(dataToSubmit)).then(response => {
             if (response.payload.success) {
@@ -104,7 +130,7 @@ function RegisterPage(props) {
               <Form.Item required label="Name">
                 <Input
                   id="name"
-                  placeholder="Enter your name"
+                  placeholder="이름"
                   type="text"
                   value={values.name}
                   onChange={handleChange}
@@ -121,7 +147,7 @@ function RegisterPage(props) {
               <Form.Item required label="Last Name">
                 <Input
                   id="lastName"
-                  placeholder="Enter your Last Name"
+                  placeholder="성"
                   type="text"
                   value={values.lastName}
                   onChange={handleChange}
@@ -138,7 +164,7 @@ function RegisterPage(props) {
               <Form.Item required label="Email" hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
                 <Input
                   id="email"
-                  placeholder="Enter your Email"
+                  placeholder="이메일"
                   type="email"
                   value={values.email}
                   onChange={handleChange}
@@ -155,7 +181,7 @@ function RegisterPage(props) {
               <Form.Item required label="Password" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
                 <Input
                   id="password"
-                  placeholder="Enter your password"
+                  placeholder="비밀번호"
                   type="password"
                   value={values.password}
                   onChange={handleChange}
@@ -172,7 +198,7 @@ function RegisterPage(props) {
               <Form.Item required label="Confirm" hasFeedback>
                 <Input
                   id="confirmPassword"
-                  placeholder="Enter your confirmPassword"
+                  placeholder="비밀번호 확인"
                   type="password"
                   value={values.confirmPassword}
                   onChange={handleChange}
@@ -187,8 +213,8 @@ function RegisterPage(props) {
               </Form.Item>
 
               <Form.Item {...tailFormItemLayout}>
-                <Button onClick={handleSubmit} type="primary" disabled={isSubmitting}>
-                  Submit
+                <Button onClick={handleSubmit} type="primary">
+                  회원가입
                 </Button>
               </Form.Item>
             </Form>
