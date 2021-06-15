@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { registerUser } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
+import '../LoginPage/LoginPage.css'
 
 import {
   Form,
@@ -100,6 +101,7 @@ function RegisterPage(props) {
 
           dispatch(registerUser(dataToSubmit)).then(response => {
             if (response.payload.success) {
+              window.confirm("회원가입이 완료되었습니다.\n 로그인 페이지로 이동합니다.")
               props.history.push("/login");
             } else {
               alert(response.payload.err.errmsg)
@@ -124,9 +126,11 @@ function RegisterPage(props) {
         } = props;
         return (
           <div className="app">
+            <div className="imgBx">
+              <img className="mainImg" src="main_bg.png"></img>
+            
+            <Form className="loginform" style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
             <h2>Sign up</h2>
-            <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
-
               <Form.Item required label="Name">
                 <Input
                   id="name"
@@ -219,6 +223,8 @@ function RegisterPage(props) {
               </Form.Item>
             </Form>
           </div>
+          </div>
+
         );
       }}
     </Formik>

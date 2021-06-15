@@ -30,7 +30,8 @@
   transform: translate(-50%,-50%);
   border-radius: 50%;
   opacity: 0.9;
-  background: #657fa8;
+  /* background: #657fa8; */
+  background: #135058;
   z-index: 1;
   transition: width 0.5s, height 0.5s
 }

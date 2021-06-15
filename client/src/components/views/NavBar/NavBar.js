@@ -16,7 +16,7 @@ function NavBar() {
           </div>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/">Record</a></li>
+            <li><a href="/">Let's Play</a></li>
             <li><a href="/about">About</a></li>
             <RightMenu/>
             <li className="close">X</li>

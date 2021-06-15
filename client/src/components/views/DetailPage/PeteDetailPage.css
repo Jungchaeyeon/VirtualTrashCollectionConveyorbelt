@@ -1,0 +1,15 @@
+.div .section .video{
+    position: relative;
+    left: 0;
+    top:2rem;
+    width: 100vw;
+    object-fit: cover;
+    z-index: 1;
+}
+.div .section .panel{
+    width: 450px;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+

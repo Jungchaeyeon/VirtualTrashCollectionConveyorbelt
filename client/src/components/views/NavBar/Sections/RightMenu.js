@@ -29,7 +29,7 @@ function RightMenu(props) {
   } else {
     return ( //로그인 한 사람들은 이곳이 렌더링
         <li>
-          <a href="/video/upload">Video</a>
+          {/* <a href="/video/upload">Video</a> */}
           <a onClick={logoutHandler}>Logout</a>
           </li>
     )
