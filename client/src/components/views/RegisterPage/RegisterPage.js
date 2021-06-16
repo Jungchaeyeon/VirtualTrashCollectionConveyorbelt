@@ -12,6 +12,7 @@ import {
   Button,
 } from 'antd';
 
+const { Title } = Typography;
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
@@ -130,7 +131,7 @@ function RegisterPage(props) {
               <img className="mainImg" src="main_bg.png"></img>
             
             <Form className="loginform" style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
-            <h2>Sign up</h2>
+            <Title level={1} style={{textAlign:'center' ,color:'#EEEEEE'}}>LOGIN</Title>
               <Form.Item required label="Name">
                 <Input
                   id="name"

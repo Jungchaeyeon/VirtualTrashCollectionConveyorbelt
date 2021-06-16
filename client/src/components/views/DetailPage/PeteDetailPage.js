@@ -95,14 +95,15 @@ function PeteDetailPage() {
        setTimeout(() => {
         pushData(variable);   
        }, 500); 
-          
-      setData(data=>({
-        ...data,
-        inputTrash: +todayData.inputTrash,
-        recyclingTrash : +todayData.recyclingTrash ,
-        recyclingRate: parseInt((todayData.inputTrash + data.inputTrash) / (todayData.recyclingTrash + data.recyclingTrash))*100,
-        uptime : +todayData.uptime 
-      }))
+     
+       //코드 바꿔보기
+      // setData(data=>({
+      //   ...data,
+      //   inputTrash: +todayData.inputTrash,
+      //   recyclingTrash : +todayData.recyclingTrash ,
+      //   recyclingRate: parseInt((todayData.inputTrash + data.inputTrash) / (todayData.recyclingTrash + data.recyclingTrash))*100,
+      //   uptime : +todayData.uptime 
+      // }))
        
       }, [data.uptime]);
     
