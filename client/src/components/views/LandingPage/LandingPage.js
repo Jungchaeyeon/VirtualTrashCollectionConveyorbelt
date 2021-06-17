@@ -9,8 +9,8 @@ function LandingPage(props) {
     //컨베이어벨트 종류
     const conveyorbeltType = [
     {
-        class: 'Pete',
-        subHeading : 'Conveyor belt sorting only recyclable PET bottles',
+        class: 'Plate',
+        subHeading : 'Conveyor belt sorting only recyclable Plate',
         img: 'img-bg1.png'
     },{
         class: 'glass bottle',

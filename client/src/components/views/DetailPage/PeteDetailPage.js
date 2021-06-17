@@ -74,7 +74,7 @@ function PeteDetailPage() {
 					item: recData.item,
 					inputTrash :  recData.inputTrash,
 					recyclingTrash :  recData.recyclingTrash,
-					recyclingRate : parseInt(recData.recyclingRate)*100,
+					recyclingRate : parseInt(recData.recyclingRate),
 					uptime : recData.uptime,
 				}));
 	
@@ -95,6 +95,15 @@ function PeteDetailPage() {
        setTimeout(() => {
         pushData(variable);   
        }, 500); 
+     
+       //코드 바꿔보기
+      // setData(data=>({
+      //   ...data,
+      //   inputTrash: +todayData.inputTrash,
+      //   recyclingTrash : +todayData.recyclingTrash ,
+      //   recyclingRate: parseInt((todayData.inputTrash + data.inputTrash) / (todayData.recyclingTrash + data.recyclingTrash))*100,
+      //   uptime : +todayData.uptime 
+
        
       }, [data.uptime]);
     
@@ -120,7 +129,6 @@ function PeteDetailPage() {
         .then(response =>{
             if(response.data.success){
                 console.log("성공적으로 저장했습니다.")  
-               
             }
             else{
                 console.log("데이터 저장에 실패했습니다.")

@@ -12,7 +12,7 @@ function NavBar() {
     <div>
         <header style={{display:'flex'}}>
           <div className="logo"  style={{display:'inline-block'}}>
-            <Title level={1} style={{ marginTop: '0.5em'}}>YANADO</Title>
+            <Title level={1} style={{ marginTop: '0.5em'}}>YANADOO</Title>
           </div>
           <ul>
             <li><a href="/">Home</a></li>
