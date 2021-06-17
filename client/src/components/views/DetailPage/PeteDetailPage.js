@@ -77,7 +77,7 @@ function PeteDetailPage() {
 					recyclingRate : parseInt(recData.recyclingRate),
 					uptime : recData.uptime,
 				}));
-	
+       
 				  break;
 			  }
 		}
@@ -114,7 +114,7 @@ function PeteDetailPage() {
     function getNowDate(){
       let nowDate = new Date().toLocaleDateString().split('.')
 
-        let year = nowDate[0].trim()
+        var year = nowDate[0].trim()
         var month = parseInt(nowDate[1].trim())
         var day = parseInt(nowDate[2].trim())
 
@@ -179,7 +179,7 @@ function PeteDetailPage() {
 
     const renderData = (data)=>{
       return (<p>
-        <h4 className="content">[{data.date}]</h4>
+        <h4 className="content">{data.date.substr(0,4)}년 {data.date.substr(4,2)}월 {data.date.substr(6,2)}일</h4>
         <h4 className="content">분리배출 품목 : {data.item}</h4>
         <h4 className="content">총 쓰레기 배출량(갯수) : {data.inputTrash}</h4>
         <h4 className="content">재활용 가능 쓰레기량(갯수) : {data.recyclingTrash}</h4>
@@ -198,7 +198,7 @@ function PeteDetailPage() {
                {renderData(data)}
             </Panel>
             <Panel header="일 별 페트병 분리수거 현황" key="2">            
-              <DatePicker onChange={onChange} />
+              <DatePicker onChange={onChange} style={{ marginBottom: '20px'}}/>
               {renderData(recordData)}
             </Panel>
         </Collapse>

@@ -132,7 +132,7 @@ function RegisterPage(props) {
               <img className="mainImg" src="main_bg.png"></img>
             
             <Form className="loginform" style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
-            <Title level={1} style={{textAlign:'center' ,color:'#EEEEEE'}}>LOGIN</Title>
+            <Title level={1} style={{textAlign:'center' ,color:'#EEEEEE'}}>SIGN UP</Title>
               <Form.Item required label="Name">
                 <Input
                   id="name"
