@@ -9,11 +9,11 @@ function LandingPage(props) {
     //컨베이어벨트 종류
     const conveyorbeltType = [
     {
-        class: 'Plate',
+        class: 'GlassPlate',
         subHeading : 'Conveyor belt sorting only recyclable Plate',
         img: 'img-bg1.png'
     },{
-        class: 'glass bottle',
+        class: 'Glass bottle',
         subHeading : 'Conveyor belt sorting only recyclable glass bottles',
         img: 'img-bg2.png'
     },{
@@ -25,7 +25,7 @@ function LandingPage(props) {
     //페이지 이동
     const toDetailPage =(index)=>{
         console.log(index) // 0 - pete, 1 - glass, 2 - Can
-        if(index === 0) props.history.push("./peteDetail")
+        if(index === 0) props.history.push("./glassPlate")
         // if(index === 1) props.history.push("./glassDetail")
         // if(index === 2) props.history.push("./canDetail")
     }

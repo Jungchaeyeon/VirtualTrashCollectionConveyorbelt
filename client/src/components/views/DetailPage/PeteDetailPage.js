@@ -191,13 +191,13 @@ function PeteDetailPage() {
         <div className="div">
         <section className="section" >
             <video className="video" muted autoPlay loop>
-                <source src="/Videos/convey.mp4" type="video/mp4"/>
+                <source src="/Videos/conveyGlassPlate.mp4" type="video/mp4"/>
             </video>            
         <Collapse className="panel" defaultActiveKey={['1']} onChange={callback}>
-            <Panel header="실시간 페트병 분리수거 현황" key="1">
+            <Panel header="실시간 GlassPlate 분리수거 현황" key="1">
                {renderData(data)}
             </Panel>
-            <Panel header="일 별 페트병 분리수거 현황" key="2">            
+            <Panel header="일 별 GlassPlate 분리수거 현황" key="2">            
               <DatePicker onChange={onChange} style={{ marginBottom: '20px'}}/>
               {renderData(recordData)}
             </Panel>
