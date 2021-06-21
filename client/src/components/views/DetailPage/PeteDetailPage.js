@@ -89,7 +89,7 @@ function PeteDetailPage() {
         date: data.date,
         inputTrash :todayData.inputTrash + data.inputTrash,
         recyclingTrash : todayData.recyclingTrash + data.recyclingTrash,
-        recyclingRate : parseInt((todayData.recyclingTrash + data.recyclingTrash) / (todayData.inputTrash + data.inputTrash))*100,
+        recyclingRate : todayData.recyclingRate,
         uptime : todayData.uptime + data.uptime
       }
        setTimeout(() => {
