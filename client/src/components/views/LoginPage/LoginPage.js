@@ -37,12 +37,12 @@ function LoginPage(props) {
   //   setRememberMe(!rememberMe)
   // };
 
-  const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
+//  const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
 
   return (
     <Formik
       initialValues={{
-        email: initialEmail,
+        email: '',
         password: '',
       }}
       validationSchema={Yup.object().shape({

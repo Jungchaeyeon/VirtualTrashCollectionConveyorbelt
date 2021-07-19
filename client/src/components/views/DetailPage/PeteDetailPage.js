@@ -113,15 +113,21 @@ function PeteDetailPage() {
 
     function getNowDate(){
       let nowDate = new Date().toLocaleDateString().split('.')
+      console.log(nowDate)
+	
+        	var year = nowDate[0].trim()
+                var month = parseInt(nowDate[1].trim())
+                var  day = parseInt(nowDate[2].trim())
 
-        var year = nowDate[0].trim()
-        var month = parseInt(nowDate[1].trim())
-        var day = parseInt(nowDate[2].trim())
+//		month = parseInt(month.trim())
+//		day = parseInt(day.trim())
 
-        if(month<=9 && month>=1) month = '0'+ month
-        if(day<=9 && day>=1) day = '0'+ day
+                if(month<=9 && month>=1) month = '0'+ month
+                if(day<=9 && day>=1) day = '0'+ day
 
-        return year+month+day }
+    		return year+month+day 
+	
+    }
 
     function pushData(variable){
     
@@ -143,7 +149,10 @@ function PeteDetailPage() {
           if(response.data.success && response.data.data !== null){
             let getData = response.data.data
             let date = getNowDate();
-            if(getData.date == date) {
+          
+          console.log(getData.date+"datedata")
+	  	  
+	  if(getData.date == date) {
               settodayData(data =>({
                 date: getData.date,
                 item: getData.item,
