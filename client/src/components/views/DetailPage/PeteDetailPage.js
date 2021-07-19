@@ -116,11 +116,11 @@ function PeteDetailPage() {
       console.log(nowDate)
 	
         	var year = nowDate[0].trim()
-                var month = parseInt(nowDate[1].trim())
-                var  day = parseInt(nowDate[2].trim())
+                let month = nowDate[1]+''
+                let  day = nowDate[2]+''
 
-//		month = parseInt(month.trim())
-//		day = parseInt(day.trim())
+		month = parseInt(month.trim())
+		day = parseInt(day.trim())
 
                 if(month<=9 && month>=1) month = '0'+ month
                 if(day<=9 && day>=1) day = '0'+ day

@@ -55,3 +55,38 @@ header .close{
     right: 0;
     border-radius: 5px;
 }
+@media(max-width: 500px){
+header ul{
+   position: fixed;
+   top: 0;
+   left: -100%;
+   background: #555;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   z-index: 99;
+   transition: 0.5s linear;
+}
+header ul.toggle{
+   left: 0;
+}
+header ul li{
+   line-height: normal;
+}
+header .menu,
+header .close{
+    left: 10;
+    display: block;   
+}
+header .logo{
+    width: initial;
+    margin-left: 20px;
+    line-height: 70px;
+}
+section h2{
+    font-size: 1.4rem;    
+}
+}
