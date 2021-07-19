@@ -63,12 +63,12 @@ function LoginPage(props) {
           dispatch(loginUser(dataToSubmit))
             .then(response => {
               if (response.payload.loginSuccess) {
-                window.localStorage.setItem('userId', response.payload.userId);
-                if (rememberMe === true) {
-                  window.localStorage.setItem('rememberMe', values.id);
-                } else {
-                  localStorage.removeItem('rememberMe');
-                }
+                // window.localStorage.setItem('userId', response.payload.userId);
+                // if (rememberMe === true) {
+                //   window.localStorage.setItem('rememberMe', values.id);
+                // } else {
+                //   localStorage.removeItem('rememberMe');
+                // }
                 props.history.push("/");
               } else {
                 setFormErrorMessage('계정 또는 비밀번호를 다시 확인하세요.')
@@ -148,7 +148,7 @@ function LoginPage(props) {
            )}
 
            <Form.Item >
-             <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
+             {/* <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox> */}
              <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' , color:'#9fdffa' }}>
                비밀번호를 잊어버렸습니다.
                </a>

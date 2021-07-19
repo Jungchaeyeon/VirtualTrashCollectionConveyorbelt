@@ -79,7 +79,7 @@ function RegisterPage(props) {
   
          
           if(num < 0 || eng < 0 || spe < 0 ){
-              return alert('"영문,숫자, 특수문자를 혼합하여 입력해주세요.')
+              return alert('"영문, 숫자, 특수문자를 혼합하여 입력해주세요.')
           }
           var regex;
           for(var i =0; i< sqlArray.length; i++){
