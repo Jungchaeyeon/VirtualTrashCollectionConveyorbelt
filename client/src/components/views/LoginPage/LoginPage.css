@@ -57,8 +57,10 @@
     height: 100%;
     position: absolute;
     display:flex;
-     flex-direction:column  ;							  justify-content:center;
+     flex-direction:column  ;							  
+     justify-content:center;
      align-items: center;
-     fill-opacity: initial;							  background-color: rgba(0, 0, 0, 0.5);
+     fill-opacity: initial;							  
+     background-color: rgba(0, 0, 0, 0.5);
      color: #9fdffa;								 }	
 	}

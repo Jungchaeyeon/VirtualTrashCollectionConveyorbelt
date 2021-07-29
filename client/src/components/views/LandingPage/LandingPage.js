@@ -2,6 +2,7 @@ import React,{ useEffect } from 'react'
 import { FaCode } from "react-icons/fa";
 import "./LandingPage.css"
 import $ from 'jquery';
+import Axios from 'axios'
 
 function LandingPage(props) {
 
@@ -21,6 +22,20 @@ function LandingPage(props) {
         subHeading : 'Conveyor belt sorting only cans',
         img: 'img-bg3.png'
     }]
+
+    //푸시 알림 전송
+     const  sendPushMessage =()=>{
+         
+        Axios.post('/api/push/sendMsg')
+        .then(response =>{
+           // if(response.data.success){
+             //   console.log("성공적으로 알림을 전송했습니다.")  
+            //}
+           // else{
+             //   console.log("알림 전송에 실패했습니다.")
+            //}
+        })
+      }
 
     //페이지 이동
     const toDetailPage =(index)=>{
@@ -69,6 +84,7 @@ function LandingPage(props) {
             <React.Fragment>
                 {renderingCards}
             </React.Fragment>
+	    <button onClick={sendPushMessage}>클릭</button>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
             <script dangerouslySetInnerHTML={{__html:useScript}}>
             </script>
