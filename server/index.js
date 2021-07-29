@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const config = require("./config/key");
 
 const WebSocket = require('ws');
+
 const sendData ={
                     
     eventName : "response",
@@ -35,7 +36,7 @@ const connect = mongoose.connect(config.mongoURI,
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
-app.use(cors())
+app.use('/api/pushnotification', require('./routes/pushnotification'))
 
 //to not get any deprecation warning or error
 //support parsing of application/x-www-form-urlencoded post data
@@ -70,6 +71,7 @@ const port = process.env.PORT || 5000
 
 app.listen(port, () => {
   console.log(`Server Listening on ${port}`)
+ 
 });
 
 //Unity-Server Socket-cummunication

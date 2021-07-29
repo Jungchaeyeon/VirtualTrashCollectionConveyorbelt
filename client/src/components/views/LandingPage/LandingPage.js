@@ -22,6 +22,21 @@ function LandingPage(props) {
         img: 'img-bg3.png'
     }]
 
+    //푸시 알림 전송
+    function sendPushMessage(e) {
+        e.preventDefault();
+         
+        Axios.post('/api/pushnotification/sendMessage', variable)
+        .then(response =>{
+            if(response.data.success){
+                console.log("성공적으로 알림을 전송했습니다.")  
+            }
+            else{
+                console.log("알림 전송에 실패했습니다.")
+            }
+        })
+      }
+
     //페이지 이동
     const toDetailPage =(index)=>{
         console.log(index) // 0 - pete, 1 - glass, 2 - Can
@@ -69,6 +84,7 @@ function LandingPage(props) {
             <React.Fragment>
                 {renderingCards}
             </React.Fragment>
+            <button onClick={sendPushMessage}>푸시알림보내기</button>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
             <script dangerouslySetInnerHTML={{__html:useScript}}>
             </script>
