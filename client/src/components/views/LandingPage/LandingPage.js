@@ -24,16 +24,16 @@ function LandingPage(props) {
     }]
 
     //푸시 알림 전송
-     const  sendPushMessage =()=>{
+     const sendPushMessage =()=>{
          
         Axios.post('/api/push/sendMsg')
         .then(response =>{
-           // if(response.data.success){
-             //   console.log("성공적으로 알림을 전송했습니다.")  
-            //}
-           // else{
-             //   console.log("알림 전송에 실패했습니다.")
-            //}
+            if(response.data.success){
+                console.log("성공적으로 알림을 전송했습니다.")  
+            }
+            else{
+                console.log("알림 전송에 실패했습니다.")
+            }
         })
       }
 
