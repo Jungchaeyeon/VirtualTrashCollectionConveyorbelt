@@ -26,7 +26,7 @@ function LandingPage(props) {
     function sendPushMessage(e) {
         e.preventDefault();
          
-        Axios.post('/api/pushnotification/sendMessage', variable)
+        Axios.post('/api/pushnotification/sendMsg', variable)
         .then(response =>{
             if(response.data.success){
                 console.log("성공적으로 알림을 전송했습니다.")  
