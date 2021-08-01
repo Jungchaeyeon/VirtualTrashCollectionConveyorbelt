@@ -16,6 +16,8 @@
   "author": "John ahn",
   "license": "ISC",
   "dependencies": {
+    "@firebase/app": "^0.6.29",
+    "@firebase/messaging": "^0.7.15",
     "bcrypt": "^3.0.8",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
