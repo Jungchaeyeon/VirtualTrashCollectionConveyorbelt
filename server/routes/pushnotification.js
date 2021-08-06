@@ -12,7 +12,7 @@ admin.initializeApp({
 
 
 router.post("/sendMsg", (req, res) => {
-    var fcm_target_token = "dLhhPXACTwGVJrLpazeOkV:APA91bEja8OFwTcOsETng6rK6dm-aypYb6WZOafVtdjNEdjjKlVmZyVpG_7BQUsvxSSYvZ3FUm_eNeMoJuqhW11cdiTfi9nEPBv78nxqg3-8KaLzoIFg57CDZdqY_uXe3fEjKJtYlD-E"
+    var fcm_target_token = "c0i3ZdUxQjeWvPHBuxuFnS:APA91bEtVdXm_fRAsNY6f_PXDJutdKpgMeB2pSvcPGgX0HoaMeTamEnBZbu9csfTIyA4hrgY56bsF-N25gv8huCrt7Tx_MXgvAHq0kIqqmcdWfoPQhocYG-M4w4XlD6FfStovht0tAHO"
     
    var fcm_message ={
 
