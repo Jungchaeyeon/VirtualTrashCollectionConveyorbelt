@@ -18,8 +18,8 @@ router.post("/sendMsg", (req, res) => {
 
             token: fcm_target_token,
             data: {
-            title: "test title",
-            message: "test message",
+            title: "오류 발생",
+            message: "컨베이어벨트 작동이 중단되었습니다.",
             type: "NORMAL"
            }
          }
