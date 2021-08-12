@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const config = require("./config/key");
 
 const WebSocket = require('ws');
+const Axios = require('axios');
 
 const sendData ={
                     
@@ -20,6 +21,12 @@ const sendData ={
     uptime:"0"
     
 };
+
+const pushMessage ={
+    eventName: "",
+    occurationTime: "",
+    message : ""	
+}
 
 // const mongoose = require("mongoose");
 // mongoose
@@ -103,9 +110,21 @@ const wss = new WebSocket.Server({ port: 8080 },()=>{
                               // console.log(sendData)
                               ws.send(JSON.stringify(sendData));
                               break;
+		         case 'getError':
+			      pushMessage.eventName = "stop"	     
+			      pushMessage.message= recData.message
+		              pushMessage.occurationTime= recData.occurationTime	                      
+			      break;
+			case 'openError':	      
+			      console.log("open socket from LandingPage!!")	      
+			      setInterval(() =>{
+			          ws.send(JSON.stringify(pushMessage));
+				  pushMessage.eventName =""    
+			      },1000)	      
+
                       }
-                      //ws.send(data);// 서버에서 유니티로 전송
-                      
+	              
+	             
                           })
                           })
 

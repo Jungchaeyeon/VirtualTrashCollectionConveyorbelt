@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import React,{ useEffect, useState } from 'react'
 import { FaCode } from "react-icons/fa";
 import "./LandingPage.css"
 import $ from 'jquery';
@@ -7,6 +7,7 @@ import Axios from 'axios'
 function LandingPage(props) {
 
 
+   
     //컨베이어벨트 종류
     const conveyorbeltType = [
     {
@@ -41,6 +42,30 @@ function LandingPage(props) {
         })
       }
 
+    // error 대응 소켓 열기	
+      const ws = new WebSocket('ws://3.37.86.169:8080')
+	useEffect(()=>{
+	
+	ws.onopen =() =>{
+	       console.log("LandingPage에서 서버와의 연결이 되었습니다.")
+		var sendData = {eventName: 'openError'}
+		ws.send(JSON.stringify(sendData))
+	      
+	}
+	},[])
+	    
+	ws.onmessage = e => {
+		
+	    let recData = JSON.parse(e.data)	;
+	    switch(recData.eventName){
+                 
+	         case "stop":
+	              
+	              sendPushMessage()
+		      console.log(recData)
+	              break; 		    
+	    }
+	}
     //페이지 이동
     const toDetailPage =(index)=>{
         console.log(index) // 0 - pete, 1 - glass, 2 - Can
