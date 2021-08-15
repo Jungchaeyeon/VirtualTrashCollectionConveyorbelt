@@ -43,7 +43,7 @@ const connect = mongoose.connect(config.mongoURI,
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
-app.use('/api/pushnotification', require('./routes/pushnotification'))
+//app.use('/api/pushnotification', require('./routes/pushnotification'))
 
 //to not get any deprecation warning or error
 //support parsing of application/x-www-form-urlencoded post data

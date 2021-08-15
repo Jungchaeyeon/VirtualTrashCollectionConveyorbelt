@@ -15,7 +15,7 @@ admin.initializeApp({
 
 router.post("/sendMsg", (req, res) => {
 
-    var fcm_target_token = "dLhhPXACTwGVJrLpazeOkV:APA91bEja8OFwTcOsETng6rK6dm-aypYb6WZOafVtdjNEdjjKlVmZyVpG_7BQUsvxSSYvZ3FUm_eNeMoJuqhW11cdiTfi9nEPBv78nxqg3-8KaLzoIFg57CDZdqY_uXe3fEjKJtYlD-E"
+    var fcm_target_token = "cS1ekTMeTouPIeFBK56VU4:APA91bGm0Vz4HVt9rKxnI9rjPQ-3JWW0xTti_FuE87wGXwkF3nBsL7rVE_V_F2bxGY7QTEbOQMRzD2UDtLbiRsATjNPmpGr8Thug5ZYZQ50YUpKbx__YczPh5xsjOnZBvh9Jc4-5G39N"
     
    var fcm_message ={
 

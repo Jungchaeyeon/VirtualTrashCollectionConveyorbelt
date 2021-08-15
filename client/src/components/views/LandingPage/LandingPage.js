@@ -27,11 +27,8 @@ function LandingPage(props) {
     //푸시 알림 전송
      const sendPushMessage =()=>{
          
-<<<<<<< HEAD
-        Axios.post('/api/pushnotification/sendMsg', variable)
-=======
+
         Axios.post('/api/push/sendMsg')
->>>>>>> afd59d157c88a6936d843c5fdc25617fe156bbd8
         .then(response =>{
             if(response.data.success){
                 console.log("성공적으로 알림을 전송했습니다.")  
