@@ -5,6 +5,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage.js";
 import RegisterPage from "../RegisterPage/RegisterPage.js";
 import PeteDetailPage from "../DetailPage/PeteDetailPage"
+import PlayPage from '../PlayPage/PlayPage';
 import './Section.css'
 
 function Section() {
@@ -16,6 +17,8 @@ function Section() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />{/* false - 로그인 한 사람만 접속 가능한 페이지 */}
           <Route exact path="/glassPlate" component={Auth(PeteDetailPage, true)} /> {/* true - 로그인 한 사람만 접속 가능한 페이지 */}
+          <Route exact path="/pet" component={Auth(PetDetailPage, true)} /> {/* true - 로그인 한 사람만 접속 가능한 페이지 */}
+          <Route exact path="/letsPlay" component={Auth(PlayPage, null)}/>
         </Switch>
       </div>
     )

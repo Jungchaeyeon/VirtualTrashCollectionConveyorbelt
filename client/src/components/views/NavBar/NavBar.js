@@ -4,6 +4,7 @@ import RightMenu from './Sections/RightMenu';
 import { Typography } from "antd";
 import 'antd/dist/antd.css';
 
+
 const { Title } = Typography;
 
 function NavBar() {
@@ -23,7 +24,7 @@ function NavBar() {
           </div>
           <ul className={istoggle ? "toggle" : ""}>
             <li><a href="/">Home</a></li>
-            <li><a href>Let's Play</a></li>
+            <li><a href="/letsPlay">Let's Play</a></li>
             <li><a href="">About</a></li>
             <RightMenu/>
             <li className="close" onClick={closeToggle}>X</li>
