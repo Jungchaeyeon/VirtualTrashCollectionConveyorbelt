@@ -1,5 +1,5 @@
 import React,{ useEffect,useState } from 'react'
-import './PeteDetailPage.css'
+import './PetDetailPage.css'
 import { Collapse, DatePicker } from 'antd'
 import Axios from 'axios';
 
@@ -9,7 +9,7 @@ const { Panel } = Collapse;
 function callback(key) {
   console.log(key);
 }
-function PeteDetailPage() {
+function PetDetailPage() {
     
     // 실시간 데이터 
     const [data, setData] = useState({
@@ -217,4 +217,4 @@ function PeteDetailPage() {
     )
 }
 
-export default PeteDetailPage
+export default PetDetailPage

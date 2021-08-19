@@ -15,8 +15,8 @@ function LandingPage(props) {
         subHeading : 'Conveyor belt sorting only recyclable Plate',
         img: 'img-bg1.png'
     },{
-        class: 'Glass bottle',
-        subHeading : 'Conveyor belt sorting only recyclable glass bottles',
+        class: 'Pet',
+        subHeading : 'Conveyor belt sorting only recyclable Pet bottle',
         img: 'img-bg2.png'
     },{
         class: 'Can',

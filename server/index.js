@@ -51,7 +51,6 @@ app.use(cookieParser());
 app.use('/api/users', require('./routes/users'));
 app.use('/api/recycledata', require('./routes/recycledata'));
 app.use('/api/push', require('./routes/pushnotification'))
-app.use('/api/push', require('./routes/'))
 app.use('/uploads', express.static('uploads'));
 
 if (process.env.NODE_ENV === "production") {

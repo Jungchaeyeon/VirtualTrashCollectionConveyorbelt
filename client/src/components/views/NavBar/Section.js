@@ -4,7 +4,8 @@ import Auth from "../../../hoc/auth";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage.js";
 import RegisterPage from "../RegisterPage/RegisterPage.js";
-import PeteDetailPage from "../DetailPage/PeteDetailPage"
+import PeteDetailPage from "../DetailPage/PeteDetailPage";
+import PetDetailPage from "../DetailPage/PetDetailPage";
 import PlayPage from '../PlayPage/PlayPage';
 import './Section.css'
 

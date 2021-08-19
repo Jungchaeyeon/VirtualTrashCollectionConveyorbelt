@@ -1,7 +1,6 @@
 import React,{ useEffect } from 'react'
 import { FaCode } from "react-icons/fa";
 import $ from 'jquery';
-import "./LandingPage.css"
 import { Link } from 'react-router-dom';
 import {buildPj} from "../../../BuildProject/Build/BuildProject.json"
 import UnityProgress from "../../../BuildProject/TemplateData/UnityProgress"
