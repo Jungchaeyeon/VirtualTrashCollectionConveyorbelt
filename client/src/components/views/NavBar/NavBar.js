@@ -4,6 +4,7 @@ import RightMenu from './Sections/RightMenu';
 import { Typography } from "antd";
 import 'antd/dist/antd.css';
 
+
 const { Title } = Typography;
 
 function NavBar() {

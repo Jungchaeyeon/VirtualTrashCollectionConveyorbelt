@@ -67,7 +67,7 @@ function LandingPage(props) {
     const toDetailPage =(index)=>{
         console.log(index) // 0 - pete, 1 - glass, 2 - Can
         if(index === 0) props.history.push("./glassPlate")
-        // if(index === 1) props.history.push("./glassDetail")
+        if(index === 1) props.history.push("./pet")
         // if(index === 2) props.history.push("./canDetail")
     }
 
