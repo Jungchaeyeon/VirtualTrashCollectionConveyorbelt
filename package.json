@@ -30,8 +30,10 @@
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "react-redux": "^5.0.7",
+    "react-render-html": "^0.6.0",
     "saslprep": "^1.0.3",
     "supports-color": "^7.1.0",
+    "unity-loader": "^1.0.11",
     "ws": "^7.4.6"
   },
   "devDependencies": {
