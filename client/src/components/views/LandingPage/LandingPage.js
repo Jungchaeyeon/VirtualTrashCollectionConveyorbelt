@@ -106,19 +106,17 @@ function LandingPage(props) {
 
     return (
     
-        <div className="container">
-            <React.Fragment>
-                {renderingCards}
-            </React.Fragment>
-
-            <button onClick={sendPushMessage}>푸시알림보내기</button>
-
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
-            <script dangerouslySetInnerHTML={{__html:useScript}}>
-            </script>
-       </div>
-   
-    )
+          <div className="container">
+	                <React.Fragment>
+	                    {renderingCards}
+	                </React.Fragment>
+	                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
+	                <script dangerouslySetInnerHTML={{__html:useScript}}>
+	                </script>
+	           </div>
+	       
+	        )
 }
 
 export default LandingPage
+

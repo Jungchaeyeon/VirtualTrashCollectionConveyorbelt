@@ -58,7 +58,8 @@ function PeteDetailPage() {
 					date : `${nowDate}`   
         }));
      
-        let variable = { date : nowDate }
+        let variable = { date : nowDate,
+			 item : "GlassPlate"}
         getData(variable);
 
         }, [])
@@ -92,6 +93,7 @@ function PeteDetailPage() {
         recyclingRate : data.recyclingRate,
         uptime : todayData.uptime + data.uptime
       }
+	console.log(variable)
        setTimeout(() => {
         pushData(variable);   
        }, 500); 
@@ -175,13 +177,24 @@ function PeteDetailPage() {
               }))
              
           }else{
-              console.log('데이터를 가져오는 데 실패했습니다.')
+            let date = getNowDate();
+	    
+	     setrecordData(data =>({
+		                     ...data,
+		                     date: variable.date,
+		                     item: "GlassPlate",
+		                     inputTrash: 0,
+		                     recyclingTrash: 0,
+		                     recyclingRate: 0,
+		                     uptime :0
+		                   }))
+              console.log('데이터를 가져오는 데 실패했습니다.'+getData.date+ getData.item)
           }
       })  
     }
     function onChange(date, _dateString) {
       let dateString = _dateString.replace(/-/gi,'')
-      let pushData ={ date : dateString }
+      let pushData ={ date : dateString, item : "GlassPlate" }
       getData(pushData);
      
     }
@@ -189,7 +202,7 @@ function PeteDetailPage() {
     const renderData = (data)=>{
       return (<p>
         <h4 className="content">{data.date.substr(0,4)}년 {data.date.substr(4,2)}월 {data.date.substr(6,2)}일</h4>
-        <h4 className="content">분리배출 품목 : {data.item}</h4>
+        <h4 className="content">분리배출 품목 : Glass Plate </h4>
         <h4 className="content">총 쓰레기 배출량(갯수) : {data.inputTrash}</h4>
         <h4 className="content">재활용 가능 쓰레기량(갯수) : {data.recyclingTrash}</h4>
         <h4 className="content">재활용률( % ) :  {data.recyclingRate}</h4>

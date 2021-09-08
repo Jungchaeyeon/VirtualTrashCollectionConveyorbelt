@@ -31,13 +31,14 @@ const recycleDataSchema = mongoose.Schema({
     }
 })
 
-recycleDataSchema.statics.findByDate = function (_date, cb) {
+recycleDataSchema.statics.findByDate = function (_data, cb) {
     var recycleData = this;
-    recycleData.findOne({date : _date}, function(err, recycledata){
-     
-        if(err) return cb(err);
-        cb(null, recycledata);
-    })
+    recycleData.findOne({date : _data.date,
+    			 item : _data.item},
+	    function(err, recycledata){
+	        if(err) return cb(err);
+	        return cb(null, recycledata);
+   		 })
 
 }
 

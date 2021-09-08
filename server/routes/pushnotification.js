@@ -22,7 +22,7 @@ router.post("/sendMsg", (req, res) => {
             token: fcm_target_token,
             data: {
             title: "오류 발생",
-            message: "컨베이어벨트 작동이 중단되었습니다.\n"+date.getFullYear+"/"+(date.getMonth()+1)+"/"+date.getDate+"",
+            message: "컨베이어벨트 작동이 중단되었습니다.",
             type: "NORMAL"
            }
          }

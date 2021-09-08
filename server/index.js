@@ -21,12 +21,7 @@ const pushMessage = {
   occurrationTime: "",
   message : ""
 }
-    //푸시 알림 전송
-const sendPushMessage =()=>{
-         var sendMessage = {eventName: "stop"}
-         ws.send(JSON.stringify(sendMessage))
-      
-    }
+  
 // const mongoose = require("mongoose");
 // mongoose
 //   .connect(config.mongoURI, { useNewUrlParser: true })
@@ -95,14 +90,17 @@ const wss = new WebSocket.Server({ port: 8080 },()=>{
                               ws.send(JSON.stringify(sendData));
                               break;
                           case 'getError':
-                              pushMessage.eventName = recData.pushMessage
-                              pushMessage.message= recData.message
-                              pushMessage.occurrationTime= recData.message
-                              ss.send(JSON.stringify(pushMessage));
-                              sendPushMessage(()=>{
-                                
-                              })
-                              break;
+				      			      pushMessage.eventName = "stop"	     
+				      			      pushMessage.message= recData.message
+				      		              pushMessage.occurationTime= recData.occurationTime	                      
+				      			      break;
+				      			case 'openError':	      
+				      			      console.log("open socket from LandingPage!!")	      
+				      			      setInterval(() =>{
+								      			          ws.send(JSON.stringify(pushMessage));
+								      				  pushMessage.eventName =""    
+								      			      },1000)	
+				                        break; 
                       }
                       //ws.send(data);// 서버에서 유니티로 전송
                           })
