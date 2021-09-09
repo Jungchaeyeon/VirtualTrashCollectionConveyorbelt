@@ -66,8 +66,8 @@ function PetDetailPage() {
 		ws.onmessage = e => {
 			
 			let recData = JSON.parse(e.data);			
-			switch (recData.eventName){
-				case 'response':
+			switch (recData.item){
+				case 'Pet':
           //실시간 데이터 state
 				  ws.send(JSON.stringify(recData));
 				  setData(data => ({ //date 추가하지 않을 것
