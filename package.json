@@ -13,7 +13,7 @@
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "John ahn",
+  "author": "Chaen",
   "license": "ISC",
   "dependencies": {
     "@firebase/app": "^0.6.29",
