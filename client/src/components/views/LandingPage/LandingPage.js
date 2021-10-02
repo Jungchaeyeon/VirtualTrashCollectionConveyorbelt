@@ -19,8 +19,8 @@ function LandingPage(props) {
         subHeading : 'Conveyor belt sorting only recyclable Pet bottle',
         img: 'img-bg2.png'
     },{
-        class: 'Can',
-        subHeading : 'Conveyor belt sorting only cans',
+        class: 'Spoon',
+        subHeading : 'Conveyor belt sorting only recycleable spoons',
         img: 'img-bg3.png'
     }]
 
@@ -65,10 +65,10 @@ function LandingPage(props) {
 	}
     //페이지 이동
     const toDetailPage =(index)=>{
-        console.log(index) // 0 - pete, 1 - glass, 2 - Can
+        console.log(index) // 0 - pete, 1 - glass, 2 - Spoon
         if(index === 0) props.history.push("./glassPlate")
         if(index === 1) props.history.push("./pet")
-        // if(index === 2) props.history.push("./canDetail")
+        if(index === 2) props.history.push("./spoon")
     }
 
     //카드 매핑 & 렌더링
